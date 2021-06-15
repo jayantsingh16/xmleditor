@@ -24,40 +24,13 @@
     <div id="editor">This is some sample content.</div>
     <script>
       ClassicEditor
-    .create( document.querySelector( '#editor' ))
+    .create( document.querySelector( '#editor' ) )
     .then( editor => {
-        window.editor = editor;
-
-        displayStatus( editor );
+        console.log( editor );
     } )
-    .catch( err => {
-        console.error( err.stack );
+    .catch( error => {
+        console.error( error );
     } );
-
-// Save the data to a fake HTTP server (emulated here with a setTimeout())
-function saveData( data ) {
-    return new Promise( resolve => {
-        setTimeout( () => {
-            console.log( 'Saved', data );
-
-            resolve();
-        }, HTTP_SERVER_LAG );
-    } );
-}
-
-// Update the "Status: Saving..." info.
-function displayStatus( editor ) {
-    const pendingActions = editor.plugins.get( 'PendingActions' );
-    const statusIndicator = document.querySelector( '#editor-status' );
-
-    pendingActions.on( 'change:hasAny', ( evt, propertyName, newValue ) => {
-        if ( newValue ) {
-            statusIndicator.classList.add( 'busy' );
-        } else {
-            statusIndicator.classList.remove( 'busy' );
-        }
-    } );
-}
     </script>
   </body>
 </html>
