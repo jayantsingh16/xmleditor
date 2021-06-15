@@ -24,19 +24,7 @@
     <div id="editor">This is some sample content.</div>
     <script>
       ClassicEditor
-    .create( document.querySelector( '#editor' ), {
-        plugins: [
-            Autosave,
-
-            // ... other plugins
-        ],
-
-        autosave: {
-            save( editor ) {
-                return saveData( editor.getData() );
-            }
-        }
-    } )
+    .create( document.querySelector( '#editor' ))
     .then( editor => {
         window.editor = editor;
 
