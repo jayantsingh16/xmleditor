@@ -15,7 +15,7 @@ ClassicEditor
         console.error( err.stack );
     } );
 
-// Save the data to a fake HTTP server (emulated here with a setTimeout()).
+// Save the data to a fake HTTP server (emulated here with a setTimeout())
 function saveData( data ) {
     return new Promise( resolve => {
         setTimeout( () => {
