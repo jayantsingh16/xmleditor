@@ -1,7 +1,6 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <script src="script.js"></script>
     <link rel="stylesheet" type="text/css" href="styles.css">
     <script src="https://cdn.ckeditor.com/ckeditor5/28.0.0/classic/ckeditor.js"></script>
   </head>
@@ -22,15 +21,6 @@
       </nav>
     </div>
     <div id="editor">This is some sample content.</div>
-    <script>
-      ClassicEditor
-      .create( document.querySelector( '#editor' ) )
-      .then( editor => {
-          console.log( editor );
-      } )
-      .catch( error => {
-          console.error( error );
-      } );
-    </script>
+    <script src="script.js"></script>
   </body>
 </html>
